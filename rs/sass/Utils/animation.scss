@@ -1,10 +1,7 @@
-@keyframes box-anim {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) translateX(-50%);
+// Le choix de la fraicheur
+@keyframes txt-anim {
+  to {
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -28,6 +25,25 @@
     transform: translatey(00%);
   }
 }
+
+//animation des 3 images du début
+
+// carroussel - animation {
+
+  @keyframes slider-anim {
+    0% {
+      transform: translateY(00%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes slide-img {
+    to {
+      transform: scale(1);
+    }
+  }
 
 .split-parent {
   overflow: hidden;

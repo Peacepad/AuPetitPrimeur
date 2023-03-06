@@ -8,6 +8,7 @@
 @import "./Utils/animation.scss";
 @import "./Components/heading.scss";
 @import "./Layouts/header.scss";
+@import "./Layouts/form.scss";
 @import "./Components/button.scss";
 @import "./Pages/index.scss";
 
@@ -20,11 +21,12 @@
 body {
     height: auto;
     font-family: "inter", sans-serif;
-    background-color: $background-color;
+    background-color: $green;
 }
 
 .page-container {
     max-width: 100vw;
     overflow: hidden;
     position: relative;
+    
 }

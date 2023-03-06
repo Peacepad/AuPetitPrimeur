@@ -13,5 +13,11 @@ scrollLagElements.forEach((el) => {
   })
 })
 
+gsap.registerPlugin(ScrollToPlugin);
 
+// Bouton commander
+const commandButton = document.querySelector('#command');
 
+commandButton.addEventListener('click', () => {
+  gsap.to(window, {duration: 0.5, scrollTo: "#connection"});
+})
