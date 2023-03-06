@@ -1,0 +1,117 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Au Petit Primeur</title>
+
+    <link href="./rs/css/style.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="page-container scroll-smooth">
+      <header>
+        <img
+          class="logo"
+          src="./rs/img/aupetitprimeurlogo.png"
+          alt="Logo au petit primeur"
+        />
+      </header>
+      <main>
+
+        <div class="main-left">
+            <h1 class ="txt-reveal">Le commerce de gros destiné aux professionnels</h1>
+            
+
+            <p class ="txt-reveal">
+              Fraicheur à portée de clic
+            </p>
+            <p class="txt-reveal">
+              L'entrepôt situé à pont de l'Isère vous accueille du lundi au samedi
+              de 8h à 19h
+            </p>
+            <button class="button button__orange">Commander</button>
+            <p class="small txt-reveal">
+              De préférences, effectuez vos commandes après 12h15. Merci.
+            </p>
+        </div>
+
+        <div class="main-right">
+            <img class="box-shadow" src="./rs/img/box.png" alt="ombre de la caisse de légumes" />
+            <img class="box" src="./rs/img/box1.png" alt="caisse de légumes" />
+
+        </div>
+      </main>
+
+      <section class="connection">
+
+        <div class="connection-info">
+            <h2 class ="txt-reveal">Vous êtes un professionnel et vous avez besoin d'un accès ?</h2>
+            <p class ="txt-reveal">Appelez-nous au 04.75.84.12.88 ou contactez-nous</p>
+            <button class="button button__yellow">Nous contactez</button>
+        </div>
+
+        <div class="login-container">
+            <form class="login">
+              <p>Connexion</p>
+              <div class="input-container">
+                <label class="transform-label" for="email">Email</label>
+                <input class="big-input" type="email" id="email" />
+              </div>
+              <div class="input-container">
+                <label class="transform-label" for="Mot de passe">Mot de passe</label>
+                <input class="big-input" type="password" id="password" />
+              </div>
+
+              <div class="input-container input-container__checkbox">
+                <label class="checkbox-label" for="save-login"
+                  >Mémorisez mes informations pour la prochaine connexion</label
+                >
+                <input class="checkbox-input" type="checkbox" id="save-login"/>
+              </div>
+
+              <div class="input-container">
+                <input type="submit" class="big-input">
+              </div>
+
+              <div class="input-container input-container__forgot">
+                <button class="button button__forgot button__white">Mot de passe oublié ?</button>
+              </div>
+
+              <img class="login-top scroll-lag" src="./rs/img/fruit3.png" alt="fruits" />
+              <img class="login-bottom scroll-lag" src="./rs/img/orange.png" alt="orange"/>
+
+            </form>
+        </div>
+      </section>
+
+      <section class="news">
+        <div class="heading-line">
+            <div>
+                <h2>Nos articles à disposition ce jour</h2>
+            </div>
+        </div>
+        <p id="message"></p>
+
+        <div class="carousel">
+
+        </div>
+      </section>
+    </div>
+    <script src="./rs/js/gsap.min.js"></script>
+    <script src="./rs/js/ScrollSmoother.min.js"></script>
+    <script src="./rs/js/ScrollTrigger.min.js"></script>
+    <script src="./rs/js/MotionPathPlugin.min.js"></script>
+    <script src="rs/js/TextPlugin.min.js"></script>
+    <script src="rs/js/SplitText.min.js"></script>
+
+
+    <script src="./rs/js/scroll.js"></script>
+    <script src="./rs/js/message.js"></script>
+    <script src="./rs/js/reveal.js"></script>
+  </body>
+</html>

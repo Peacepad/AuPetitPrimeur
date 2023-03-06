@@ -1,0 +1,41 @@
+.button {
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 170px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 200ms ease;
+    opacity: 0;
+    animation: button-reveal 2.5s 0.5s forwards;
+    &__orange {
+        color: white;
+        background: $orange;
+        box-shadow:  18px 18px 36px #a59b81,
+        -18px -18px 36px #ffffeb;
+
+        &:active,:focus {
+            background: $orange;
+            box-shadow: inset 18px 18px 36px #a43700,
+            inset -18px -18px 36px #ff6500;
+        }
+    }
+    &__yellow {
+        background-color: $yellow;
+        box-shadow:  18px 18px 36px #366836,
+             -18px -18px 36px #62be62;
+        &:active,:focus {
+            background: $yellow;
+            box-shadow: inset 18px 18px 36px #ad9101,
+            inset -18px -18px 36px #ffff03;
+        }
+    }
+    &__white {
+        background-color: white;
+    }
+    &__forgot {
+        width: 280px;
+        font-size: 0.8rem;
+    }
+}
+

@@ -1,0 +1,11 @@
+{
+  "name": "au-petit-primeur",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+"sass": 	"sass --watch ./rs/sass/main.scss:./rs/css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
