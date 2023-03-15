@@ -28,13 +28,13 @@
 
           <p class="txt-appear">Le choix de la fraicheur</p>
 
-          <button class="button button__yellow" id="command">Commander</button>
+          <button class="button button__yellow button__reveal" id="command">Commander</button>
 
           <div class="carousel-main">
             <div class="carousel-slide">
               <div class="carousel-img">
                 <img
-                  src="./rs/img/main-carousel/one.jpg"
+                  src="./rs/img/main-carousel/one.webp"
                   alt="image de l'entrepôt"
                 />
               </div>
@@ -43,7 +43,7 @@
             <div class="carousel-slide">
               <div class="carousel-img">
                 <img
-                  src="./rs/img/main-carousel/two.jpg"
+                  src="./rs/img/main-carousel/two.webp"
                   alt="image de l'entrepôt"
                 />
               </div>
@@ -52,7 +52,7 @@
             <div class="carousel-slide">
               <div class="carousel-img">
                 <img
-                  src="./rs/img/main-carousel/three.jpg"
+                  src="./rs/img/main-carousel/three.webp"
                   alt="image de l'entrepôt"
                 />
               </div>
@@ -65,19 +65,19 @@
           <div class="carousel-small">
             <div class="carousel-small-slide">
               <img
-                  src="./rs/img/main-carousel/one.jpg"
+                  src="./rs/img/main-carousel/one.webp"
                   alt="image de l'entrepôt"
                 />
             </div>
             <div class="carousel-small-slide">
               <img
-                  src="./rs/img/main-carousel/two.jpg"
+                  src="./rs/img/main-carousel/two.webp"
                   alt="image de l'entrepôt"
                 />
             </div>
             <div class="carousel-small-slide">
               <img
-                  src="./rs/img/main-carousel/three.jpg"
+                  src="./rs/img/main-carousel/three.webp"
                   alt="image de l'entrepôt"
                 />
             </div>
@@ -94,13 +94,15 @@
           <p class="txt-reveal">
             Appelez-nous au 04.75.84.12.88 ou contactez-nous
           </p>
-          <button class="button button__orange">Nous contactez</button>
+          <button class="button button__orange register-button" id="connection-button"></button>
         </div>
 
         <div class="form-container">
-          <div class="login-container">
-            <form class="login">
+          
+            
+            <form class="login active-l">
               <p>Connexion</p>
+
               <div class="input-container">
                 <label
                   class="transform-label"
@@ -108,8 +110,9 @@
                   id="label-login-email"
                   >Email</label
                 >
-                <input class="big-input" type="email" id="email-login" />
+                <input class="big-input" type="email" id="email-login" placeholder="Email"/>
               </div>
+
               <div class="input-container">
                 <label
                   class="transform-label"
@@ -117,26 +120,43 @@
                   id="label-password-login"
                   >Mot de passe</label
                 >
-                <input class="big-input" type="password" id="password-login" />
+                <input class="big-input" type="password" id="password-login" placeholder="Mot de passe"/>
               </div>
+
               <div class="input-container input-container__checkbox">
                 <label class="checkbox-label" for="save-login"
                   >Mémorisez mes informations pour la prochaine connexion</label
                 >
                 <input class="checkbox-input" type="checkbox" id="save-login" />
               </div>
+
               <div class="input-container">
                 <input type="submit" class="big-input" />
               </div>
+
               <div class="input-container input-container__forgot">
                 <button class="button button__forgot button__white">
                   Mot de passe oublié ?
                 </button>
               </div>
             </form>
-          </div>
 
-          <img class="palette" src="./rs/img/pallet.png" alt="palette" />
+            <form class="register inactive-r">
+              <p>S'inscrire</p>
+
+              <div class="input-container">
+                <label
+                  class="transform-label"
+                  for="email-register"
+                  id="label-register-email"
+                  >Email</label
+                >
+                <input class="big-input" type="email" id="email-register" />
+              </div>
+            </form>
+          
+
+          
         </div>
       </section>
 
@@ -146,7 +166,7 @@
             <h2>Nos articles à disposition ce jour</h2>
           </div>
         </div>
-        <p id="message"></p>
+        <p id="daily-message"></p>
 
         <div class="carousel"></div>
       </section>

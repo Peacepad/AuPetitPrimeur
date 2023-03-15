@@ -16,6 +16,7 @@ h1 {
   animation: h1-anim 0.6s 0.5s ease-out forwards
 }
 
+
 @keyframes h1-anim {
   to {
     transform: scale(1);
@@ -25,11 +26,15 @@ h1 {
 
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   @media (max-width:576px) {
     font-size: 1.4rem;
   }
 }
+
+.connection-info h2 {
+  width: 100%;
+  }
 
 .heading-line {
   width: 100%;

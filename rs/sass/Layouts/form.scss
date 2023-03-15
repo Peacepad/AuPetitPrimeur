@@ -1,10 +1,234 @@
 .form-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  overflow: hidden;
+  padding: 50px;
+  @media (max-width: 992px) {
+    width: 100%;
+  }
 }
 
-.palette {
-    height: 100px;
+// Section login
+
+.connection-info {
+  background-color: $background-color;
+  background-image: url("../img/connection2.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  max-width: 800px;
+  min-width: 500px;
+  padding: 50px;
+  border-radius:25px;
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+.connection-info p {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+// Le formulaire
+.login {
+  background-color: #ffd18d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  height: 500px;
+  padding: 30px;
+  position: absolute;
+  color: black;
+}
+
+.login::after,
+.register::after {
+  content: "";
+  height: 20px;
+  width: 40px;
+  background-color: #cf683d;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.login p {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.input-container {
+  width: 100%;
+  position: relative;
+}
+
+.big-input {
+    border: none;
+    height: 35px;
+    width: 100%;
+    background-color: white;
+    outline: none;
+  }
+
+.transform-label { // Apparaisse quand on écrit du texte
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: 200ms ease-out;
+  font-size: 1em;
+  visibility: hidden;
+}
+
+.transform-label ~ input {
+    color:black;
+    padding-left: 20px;
+    font-size: 1em;
+}
+
+
+
+// checkbox
+
+.input-container__checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.checkbox-label {
+  font-size: 0.9rem;
+}
+
+.checkbox-input {
+  margin-right: 10px;
+  border-radius: 50%;
+  border: none;
+}
+
+// password forgot
+
+.input-container__forgot {
+  display: flex;
+  justify-content: end;
+}
+
+// register
+
+.register {
+  background-color: #ffd18d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  height: 500px;
+  padding: 30px;
+  position: absolute;
+  color: black;
+}
+
+//animation form
+
+.active-l {
+  z-index: 2;
+  transform: perspective(100px) translate3d(0px, 0px, -0px);
+  animation-name: foregrounding-l;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+.active-r {
+  animation-name: foregrounding-r;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+.inactive-l {
+  animation-name: overshadowing-l;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+.inactive-r {
+  z-index: 0;
+  transform: perspective(200px) translate3d(100px, 65px, -50px);
+  animation-name: overshadowing-r;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+// ANIMATION
+
+@keyframes overshadowing-l {
+  0% {
+    z-index: 2;
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    z-index: 1;
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0.5;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes overshadowing-r {
+  0% {
+    z-index: 2;
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    z-index: 1;
+    transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    opacity: 0.5;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes foregrounding-l {
+  0% {
+    z-index: 1;
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0.5;
+  }
+  50% {
+    z-index: 2;
+    transform: perspective(100px) translate3d(400px, 0px, -30px);
+  }
+  100% {
+    z-index: 2;
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes foregrounding-r {
+  0% {
+    z-index: 1;
+    transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    opacity: 0.5;
+  }
+  50% {
+    z-index: 2;
+    transform: perspective(100px) translate3d(-400px, 0px, -30px);
+  }
+  100% {
+    z-index: 2;
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
 }

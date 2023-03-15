@@ -155,141 +155,22 @@ main {
 .carousel-small-slide:nth-child(3) {
   animation-delay: 6.66s;
 }
-// Section login
+
+// connection
 
 .connection {
-  background-color: $background-color;
-  padding: 50px;
+  background-color: white;
   padding-bottom: 0px;
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: black;
-  & p {
-    font-size: 1.2rem;
-  }
-  @media (max-width: 992px) {
-    padding: 20px;
-    padding-bottom: 0px;
-  }
-}
-
-.connection-info {
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 100px;
-  @media (max-width: 992px) {
-    height: 175px;
-  }
-  @media (max-width: 576px) {
-    height: 250px;
-    & h2 {
-      margin-bottom: 10px;
-    }
-    & p {
-      margin-bottom: 10px;
-    }
-  }
-}
-
-.login-container {
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-}
-
-// Le formulaire
-.login {
-  background-color: $yellow;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 450px;
-  height: 375px;
-  padding: 30px;
-  position: relative;
   color: black;
-  @media (max-width: 992px) {
-    width: 400px;
-  }
-}
-
-.login p {
-  font-size: 1.5em;
-  font-weight: 600;
-}
-
-.input-container {
-  width: 100%;
   position: relative;
-}
-
-.transform-label {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.big-input {
-  border-radius: 10px;
-  border: none;
-  height: 35px;
-  width: 100%;
-  background-color: white;
-}
-
-// checkbox
-
-.input-container__checkbox {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
-
-.checkbox-label {
-  font-size: 0.9rem;
-}
-
-.checkbox-input {
-  margin-right: 10px;
-  border-radius: 50%;
-  border: none;
-}
-
-// password forgot
-
-.input-container__forgot {
-  display: flex;
-  justify-content: end;
-}
-
-// images login
-
-.login-top {
-  position: absolute;
-  top: -96px;
-  right: -96px;
-  @media (max-width: 768px) {
-    right: 0px;
-    top: -150px;
-  }
-}
-
-.login-bottom {
-  position: absolute;
-  left: -96px;
-  bottom: -70px;
-  @media (max-width: 768px) {
-    right: 0px;
-    bottom: -150px;
-    left: 50%;
-    transform: translateX(-50%);
+  overflow: hidden;
+  padding: 50px;
+  
+  & p {
+    font-size: 1.2rem;
   }
 }
 
