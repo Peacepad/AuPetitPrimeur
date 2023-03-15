@@ -20,16 +20,18 @@ main {
   @media (max-width: 992px) {
     padding: 10px;
     padding-top: 30px;
+    height: auto;
   }
 }
 
-.txt-appear {
-  font-size: 1.2em;
+.txt-appear, .txt-appear2 {
+  font-size: 1.8em;
   opacity: 0;
   transform: translateY(100%) scale(2);
   animation: txt-anim 0.6s 0.5s ease-out forwards;
   @media (max-width: 992px) {
     font-size: 1.2em;
+    margin: 40px 0px;
   }
   @media (max-width: 768px) {
     font-size: 1.2em;
@@ -99,8 +101,12 @@ main {
   display: flex;
   flex-direction: row;
   transition: 200ms;
+  margin-top: 30px;
   @media (min-width: 992px) {
     display: none;
+  }
+  @media (max-width: 768px) {
+    height: 400px;
   }
 }
 
@@ -110,6 +116,7 @@ main {
   left: 0;
   width: 400px;
 }
+
 .carousel-small-slide img {
   width: 400px;
   height: 500px;
@@ -126,8 +133,8 @@ main {
   30% {
     transform: translateX(-100px);
     opacity: 1;
-  } 
-  40%{
+  }
+  40% {
     opacity: 0;
   }
   65% {
@@ -161,17 +168,13 @@ main {
 .connection {
   background-color: white;
   padding-bottom: 0px;
-  min-height: 100vh;
+  min-height: 900px;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   color: black;
   position: relative;
   overflow: hidden;
-  padding: 50px;
-  
-  & p {
-    font-size: 1.2rem;
-  }
 }
 
 // News
@@ -179,8 +182,57 @@ main {
 .news {
   background-color: $green;
   padding: 50px;
+  color: white;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .news p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
+
+.swiper-container, .swiper-container2 {
+  overflow: visible;
+  max-height: 350px;
+  position: relative;
+  margin: 40px 0px;
+}
+
+.swiper-wrapper {
+  height: auto;
+}
+
+.swiper-slide, .swiper-slide2 {
+  transition: all 300ms ease-in-out;
+  border-radius: 5px;
+  position: relative;
+ 
+}
+
+.swiper-slide img, .swiper-slide2 img {
+  border-radius: 5px;
+  max-width: 100%;
+  cursor: grab;
+}
+
+.swiper-slide img:active,.swiper-slide2 img:active{
+  cursor: grabbing;
+}
+
+.swiper-slide:hover, .swiper-slide2:hover {
+  transform: scale(1.2);
+  transition: all 300ms ease-in-out;
+  transition-delay: 200ms;
+  z-index: 1;
+}
+
+.swiper-slide:hover img, .swiper-slide2:hover img {
+  transition-delay: 300ms;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+  top: 50%;
+}
+

@@ -1,14 +1,11 @@
-@font-face {
-	font-family: 'OPTIPueblo';
-	src: url('../fonts/OPTIPueblo.otf') format('opentype')
-}
-
 @import "./Utils/color.scss";
 @import "./Utils/text.scss";
 @import "./Utils/animation.scss";
+@import "./Utils/swiper.scss";
 @import "./Components/heading.scss";
 @import "./Layouts/header.scss";
 @import "./Layouts/form.scss";
+@import "./Layouts/footer.scss";
 @import "./Components/button.scss";
 @import "./Pages/index.scss";
 

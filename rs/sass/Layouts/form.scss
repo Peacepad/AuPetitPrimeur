@@ -4,12 +4,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   overflow: hidden;
-  padding: 50px;
-  @media (max-width: 992px) {
-    width: 100%;
+}
+
+.form-container-img1 {
+  position: absolute;
+  top: 20px;
+}
+
+.form-container-img2 {
+  position: absolute;
+  top: 470px;
+  left:10px;
+  @media (max-width:576px) {
+    display: none;
   }
+}
+
+.form-container-img3 {
+  position: absolute;
+  bottom: 50px;
+  right:10px;
 }
 
 // Section login
@@ -20,11 +36,10 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 50%;
+  width: 60%;
   max-width: 800px;
   min-width: 500px;
   padding: 50px;
-  border-radius:25px;
   @media (max-width: 992px) {
     display: none;
   }
@@ -36,7 +51,7 @@
 
 // Le formulaire
 .login {
-  background-color: #ffd18d;
+  background-color: $yellow;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,23 +60,16 @@
   height: 500px;
   padding: 30px;
   position: absolute;
-  color: black;
+  color: white;
+  border-radius: 15px;
+  @media (max-width: 992px) {
+    min-width: 0;
+    max-width: 95%;
+  }
 }
 
-.login::after,
-.register::after {
-  content: "";
-  height: 20px;
-  width: 40px;
-  background-color: #cf683d;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-}
-
-.login p {
-  font-size: 1.5em;
+.login p,.register p {
+  font-size: 2em;
   font-weight: 600;
 }
 
@@ -71,14 +79,26 @@
 }
 
 .big-input {
-    border: none;
-    height: 35px;
-    width: 100%;
-    background-color: white;
-    outline: none;
-  }
+  border: none;
+  height: 35px;
+  width: 100%;
+  border: solid white 2px;
+  background-color: $yellow;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.transform-label { // Apparaisse quand on écrit du texte
+.input-img {
+  height: 100%;
+}
+
+.transform-label {
+  // Apparaisse quand on écrit du texte
   position: absolute;
   left: 20px;
   top: 50%;
@@ -87,15 +107,17 @@
   transition: 200ms ease-out;
   font-size: 1em;
   visibility: hidden;
+  color: white;
 }
 
 .transform-label ~ input {
-    color:black;
-    padding-left: 20px;
-    font-size: 1em;
+  color: white;
+  padding-left: 20px;
+  font-size: 1em;
+  &::placeholder {
+    color: white;
+  }
 }
-
-
 
 // checkbox
 
@@ -125,7 +147,7 @@
 // register
 
 .register {
-  background-color: #ffd18d;
+  background-color: $yellow;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,8 +155,9 @@
   width: 450px;
   height: 500px;
   padding: 30px;
+  border-radius: 15px;
   position: absolute;
-  color: black;
+  color: white;
 }
 
 //animation form
