@@ -1,45 +1,72 @@
 .button {
     border: none;
     border-radius: 10px;
-    height: 60px;
+    height: 50px;
     width: 170px;
     font-size: 1.3em;
     cursor: pointer;
     transition: 200ms ease;
-    
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    &__green {
+        color: white;
+        background-color: $green;
+        --spancolor:#F3CC02;
+        &:hover {
+            color: black;
+        }
+    }
     &__orange {
         color: white;
         background: $orange;
-        box-shadow:  18px 18px 36px #a59b81,
-        -18px -18px 36px #ffffeb;
-
-        &:active,:focus {
-            background: $orange;
-            box-shadow: inset 18px 18px 36px #a43700,
-            inset -18px -18px 36px #ff6500;
-        }
     }
     &__yellow {
         background-color: $yellow;
-        box-shadow:  18px 18px 36px #366836,
-             -18px -18px 36px #62be62;
-        &:active,:focus {
-            background: $yellow;
-            box-shadow: inset 18px 18px 36px #ad9101,
-            inset -18px -18px 36px #ffff03;
+        --spancolor: #E74E00;
+        &:hover {
+            color: white;
         }
     }
     &__white {
         background-color: white;
     }
-    &__forgot {
-        width: 280px;
-        font-size: 0.8rem;
-        border-radius: 0px
-    }
+
     &__reveal {
         opacity: 0;
     animation: button-reveal 2.5s 0.5s forwards;
     }
+    & span {
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        background-color: var(--spancolor);
+        transform: translateY(150%);
+        border-radius: 50%;
+        left: calc((var(--n) - 1) * 25%);
+        transition: 0.5s;
+        transition-delay: calc((var(--n) - 1) * 0.1s);
+        z-index: -1;
+    }
+    &:hover span {
+        transform: translateY(0) scale(2);
+    }
+    
+    & span:nth-child(1) {
+        --n: 1;
+    }
+    
+    & span:nth-child(2) {
+        --n: 2;
+    }
+    
+    & span:nth-child(3) {
+        --n: 3;
+    }
+    
+    & span:nth-child(4) {
+        --n: 4;
+    }
+    
 }
 

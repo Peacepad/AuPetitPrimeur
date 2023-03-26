@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -33,6 +33,7 @@
 
           <button class="button button__yellow button__reveal" id="command">
             Commander
+            <span></span><span></span><span></span><span></span>
           </button>
 
           <div class="carousel-main">
@@ -89,36 +90,40 @@
       </div>
 
       <section class="connection" id="connection">
-        <div class="connection-info">
-          <h2 class="txt-reveal">
-            Vous êtes un professionnel et vous avez besoin d'un accès ?
-          </h2>
-          <p class="txt-reveal">
-            Appelez-nous au 04.75.84.12.88 ou contactez-nous
-          </p>
-          <button
-            class="button button__orange register-button txt-reveal"
-            id="connection-button"
-          ></button>
+        <div class="connection-left">
+          <p class="txt-reveal"><b>Au Petit Primeur</b></p>
+          <p class="txt-reveal">Plongez dans un univers gourmand où qualité, fraîcheur et diversité se rencontrent.</p>
         </div>
 
         <div class="form-container">
-
           <div class="form-container-img1 scroll-lag">
-            <img src="./rs/img/fruit1.png"/>
+            <img src="./rs/img/fruit1.png" />
           </div>
-          <div class="form-container-img2 scroll-lag">
-            <img src="./rs/img/fruit2.png"/>
-          </div>
+
           <div class="form-container-img3 scroll-lag">
-            <img src="./rs/img/fruit5.png"/>
+            <img src="./rs/img/fruit5.png" />
           </div>
 
+          <div class="connection-info">
+            <h2 class="txt-reveal">
+              Vous êtes un professionnel et vous avez besoin d'un accès ?
+            </h2>
+            <p class="txt-reveal">
+              Appelez-nous au 04.75.84.12.88 ou contactez-nous
+            </p>
+            <button
+              class="button button__green register-button txt-reveal"
+              id="contact-button"
+            >
+              Nous contacter
+              <span></span><span></span><span></span><span></span>
+            </button>
+          </div>
 
-          <form class="login active-l">
-            <p>Connexion</p>
+          <form class="login">
+            <p class="txt-reveal">Connexion</p>
 
-            <div class="input-container">
+            <div class="input-container txt-reveal">
               <label
                 class="transform-label"
                 for="email-login"
@@ -133,7 +138,7 @@
               />
             </div>
 
-            <div class="input-container">
+            <div class="input-container txt-reveal">
               <label
                 class="transform-label"
                 for="Mot de passe"
@@ -148,26 +153,26 @@
               />
             </div>
 
-            <div class="input-container input-container__checkbox">
+            <div class="input-container input-container__checkbox txt-reveal">
               <label class="checkbox-label" for="save-login"
                 >Mémorisez mes informations pour la prochaine connexion</label
               >
               <input class="checkbox-input" type="checkbox" id="save-login" />
             </div>
 
-            <div class="input-container">
-              <button type="submit" class="big-input">Envoyer</button>
-              
+            <div class="input-container input-container__button txt-reveal">
+              <button type="submit" class="button button__green">
+                Envoyer
+                <span></span><span></span><span></span><span></span>
+              </button>
             </div>
 
-            <div class="input-container input-container__forgot">
-              <button class="big-input">
-                Mot de passe oublié ?
-              </button>
+            <div class="input-container input-container__forgot txt-reveal">
+              Mot de passe oublié ?
             </div>
           </form>
 
-          <form class="register inactive-r">
+          <form class="register">
             <p>S'inscrire</p>
 
             <div class="input-container">
@@ -177,7 +182,12 @@
                 id="label-register-email"
                 >Email</label
               >
-              <input class="big-input" type="email" id="email-register" placeholder="Email"/>
+              <input
+                class="big-input"
+                type="email"
+                id="email-register"
+                placeholder="Email"
+              />
             </div>
 
             <div class="input-container">
@@ -187,15 +197,17 @@
                 id="label-register-password"
                 >Email</label
               >
-              <input class="big-input" type="password" id="password-register" placeholder="Mot de passe"/>
+              <input
+                class="big-input"
+                type="password"
+                id="password-register"
+                placeholder="Mot de passe"
+              />
             </div>
 
             <div class="input-container">
               <button type="submit" class="big-input">Envoyer</button>
-              
             </div>
-
-
           </form>
         </div>
       </section>
@@ -209,18 +221,184 @@
         <p id="daily-message" class="txt-reveal2"></p>
 
         <div class="swiper-container">
-          <div class="swiper-wrapper"></div>
-
-        
+          <div class="swiper-wrapper" id="swiper-wrapper1"></div>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper" id="swiper-wrapper2"></div>
         </div>
       </section>
 
       <section class="about">
-        
+        <div class="usps__container">
+          <h2>Qui sommes nous ?</h2>
+
+          <div
+            class="usps__list"
+            data-current-stage="1"
+            data-total="4"
+            style="--current: 1;--total: 4;--height-desktop: 380px;--height-mobile: 340px;"
+          >
+            <div
+              class="usps__item usps__item--1"
+              data-stage="1"
+              style="--tab: 1; --z-index: 4"
+            >
+              <div class="usps__item-wrapper">
+                <div class="usps__item-image-wrapper">
+                  <img
+                    class="usps__item-image"
+                    src="https://www.proagenda.com/hubfs/raw_assets/public/proagenda/images/usp-sample-icon.svg"
+                    alt="Sample icon"
+                    loading="lazy"
+                    width="96"
+                    height="97"
+                  />
+                </div>
+
+                <div class="usps__item-description">
+                  Show your availability on your booking site and receive
+                  bookings in 2 clicks
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="usps__item usps__item--2"
+              data-stage="2"
+              style="--tab: 2; --z-index: 3"
+            >
+              <div class="usps__item-wrapper">
+                <div class="usps__item-image-wrapper">
+                  <img
+                    class="usps__item-image"
+                    src="https://www.proagenda.com/hubfs/raw_assets/public/proagenda/images/usp-sample-icon-2.svg"
+                    alt="Sample icon"
+                    loading="lazy"
+                    width="96"
+                    height="97"
+                  />
+                </div>
+
+                <div class="usps__item-description">
+                  No more no-shows as we make sure to alert your customers on
+                  time
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="usps__item usps__item--3"
+              data-stage="3"
+              style="--tab: 3; --z-index: 2"
+            >
+              <div class="usps__item-wrapper">
+                <div class="usps__item-image-wrapper">
+                  <img
+                    class="usps__item-image"
+                    src="https://www.proagenda.com/hubfs/raw_assets/public/proagenda/images/usp-sample-icon-3.svg"
+                    alt="Sample icon"
+                    loading="lazy"
+                    width="96"
+                    height="97"
+                  />
+                </div>
+
+                <div class="usps__item-description">
+                  Save time on your admin with integrated online payments and
+                  reporting tools
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="usps__item usps__item--4"
+              data-stage="4"
+              style="--tab: 4; --z-index: 1"
+            >
+              <div class="usps__item-wrapper">
+                <div class="usps__item-image-wrapper">
+                  <img
+                    class="usps__item-image"
+                    src="https://www.proagenda.com/hs-fs/hubfs/icn_4.png?width=96&amp;height=96&amp;name=icn_4.png"
+                    alt="icn_4"
+                    loading="lazy"
+                    width="96"
+                    height="96"
+                    srcset="
+                      https://www.proagenda.com/hs-fs/hubfs/icn_4.png?width=48&amp;height=48&amp;name=icn_4.png    48w,
+                      https://www.proagenda.com/hs-fs/hubfs/icn_4.png?width=96&amp;height=96&amp;name=icn_4.png    96w,
+                      https://www.proagenda.com/hs-fs/hubfs/icn_4.png?width=144&amp;height=144&amp;name=icn_4.png 144w,
+                      https://www.proagenda.com/hs-fs/hubfs/icn_4.png?width=192&amp;height=192&amp;name=icn_4.png 192w,
+                      https://www.proagenda.com/hs-fs/hubfs/icn_4.png?width=240&amp;height=240&amp;name=icn_4.png 240w,
+                      https://www.proagenda.com/hs-fs/hubfs/icn_4.png?width=288&amp;height=288&amp;name=icn_4.png 288w
+                    "
+                    sizes="(max-width: 96px) 100vw, 96px"
+                  />
+                </div>
+
+                <div class="usps__item-description">
+                  Be visible sending your personal ProAgenda booking link to
+                  your clients in mails or on social media and embed it on your
+                  website.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="usps__btns-wrapper btns-wrapper btns-wrapper--alignment-center"
+          >
+            <button class="usps__arrow usps__arrow--prev">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect y="6" width="13" height="2" fill="#F5F3EE"></rect>
+                <rect
+                  width="10"
+                  height="2"
+                  transform="matrix(0.707102 0.707112 -0.707102 0.707112 7.41406 0)"
+                  fill="#F5F3EE"
+                ></rect>
+                <rect
+                  width="10"
+                  height="2"
+                  transform="matrix(0.707102 -0.707112 0.707102 0.707112 6 12.7275)"
+                  fill="#F5F3EE"
+                ></rect>
+              </svg>
+            </button>
+            <button class="usps__arrow usps__arrow--next">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect y="6" width="13" height="2" fill="#F5F3EE"></rect>
+                <rect
+                  width="10"
+                  height="2"
+                  transform="matrix(0.707102 0.707112 -0.707102 0.707112 7.41406 0)"
+                  fill="#F5F3EE"
+                ></rect>
+                <rect
+                  width="10"
+                  height="2"
+                  transform="matrix(0.707102 -0.707112 0.707102 0.707112 6 12.7275)"
+                  fill="#F5F3EE"
+                ></rect>
+              </svg>
+            </button>
+          </div>
+        </div>
       </section>
 
       <footer>Mentions Légales</footer>
-
     </div>
     <script src="./rs/js/gsap.min.js"></script>
     <script src="./rs/js/ScrollTrigger.min.js"></script>

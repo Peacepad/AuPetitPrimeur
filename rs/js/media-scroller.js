@@ -1,7 +1,8 @@
-const swiperWrapper = document.querySelector(".swiper-wrapper");
+const swiperWrapper = document.querySelector("#swiper-wrapper1");
+const swiperWrapper2 = document.querySelector("#swiper-wrapper2");
 
 async function createImages(imageUrls) {
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 24; i++) {
     let imageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
     let swiperSlide = document.createElement("div");
     swiperSlide.setAttribute("class", "swiper-slide");
@@ -12,9 +13,25 @@ async function createImages(imageUrls) {
     image.setAttribute("src", imageUrl);
 
     swiperSlide.appendChild(image);
+
+    if(i > 11) {
+      let imageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
+      let swiperSlide2 = document.createElement("div");
+      swiperSlide2.setAttribute("class", "swiper-slide");
+      swiperWrapper2.appendChild(swiperSlide2);
+  
+      let image2 = document.createElement("img");
+      image2.setAttribute("class", "swiper-img");
+      image2.setAttribute("src", imageUrl);
+  
+      swiperSlide2.appendChild(image);
+    }
   }
 
-  let swiper = new Swiper(".swiper-container", {
+  let swiperContainers = document.querySelectorAll(".swiper-container");
+
+swiperContainers.forEach((container) => {
+  new Swiper(container, {
     slidesPerView: 6,
     spaceBetween: 10,
     slidesPerGroup: 2,
@@ -40,6 +57,8 @@ async function createImages(imageUrls) {
       },
     },
   });
+});
+
 }
 
 async function getImages() {

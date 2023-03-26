@@ -17,6 +17,7 @@ main {
   padding: 50px;
   padding-bottom: 10px;
   color: white;
+  font-family: "Sharp Grotesk", sans-serif;
   @media (max-width: 992px) {
     padding: 10px;
     padding-top: 30px;
@@ -24,7 +25,8 @@ main {
   }
 }
 
-.txt-appear, .txt-appear2 {
+.txt-appear,
+.txt-appear2 {
   font-size: 1.8em;
   opacity: 0;
   transform: translateY(100%) scale(2);
@@ -166,9 +168,10 @@ main {
 // connection
 
 .connection {
-  background-color: white;
+  background-color: $background-color;
   padding-bottom: 0px;
-  min-height: 900px;
+  min-height: 800px;
+  max-height: 1000px;
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -185,13 +188,17 @@ main {
   color: white;
   overflow: hidden;
   max-width: 100%;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 }
 
 .news p {
   font-size: 1.3rem;
 }
 
-.swiper-container, .swiper-container2 {
+.swiper-container,
+.swiper-container2 {
   overflow: visible;
   max-height: 350px;
   position: relative;
@@ -202,37 +209,186 @@ main {
   height: auto;
 }
 
-.swiper-slide, .swiper-slide2 {
+.swiper-slide,
+.swiper-slide2 {
   transition: all 300ms ease-in-out;
   border-radius: 5px;
   position: relative;
- 
 }
 
-.swiper-slide img, .swiper-slide2 img {
+.swiper-slide img,
+.swiper-slide2 img {
   border-radius: 5px;
   max-width: 100%;
   cursor: grab;
 }
 
-.swiper-slide img:active,.swiper-slide2 img:active{
+.swiper-slide img:active,
+.swiper-slide2 img:active {
   cursor: grabbing;
 }
 
-.swiper-slide:hover, .swiper-slide2:hover {
+.swiper-slide:hover,
+.swiper-slide2:hover {
   transform: scale(1.2);
   transition: all 300ms ease-in-out;
   transition-delay: 200ms;
   z-index: 1;
 }
 
-.swiper-slide:hover img, .swiper-slide2:hover img {
+.swiper-slide:hover img,
+.swiper-slide2:hover img {
   transition-delay: 300ms;
-  box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
-
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   top: 50%;
 }
 
+.about {
+  background-color: $background-color;
+  position: relative;
+  padding: 50px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.usps__container {
+max-width: 100%;
+position: relative;
+}
+
+.usps__item,
+.usps__list {
+  height: var(--height-desktop);
+  @media (max-width: 992px){
+    height: var(--height-mobile);
+}
+}
+
+.usps__list {
+  margin-inline: auto;
+  margin-top: calc((var(--total) - 1) * 30px);
+  max-width: 840px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.usps__item {
+  background: #ecf2fd;
+  border-radius: 20px;
+  display: grid;
+  left: 0;
+  overflow: hidden;
+  padding: 40px;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  top: calc((var(--current) - var(--tab)) * 30px);
+  transform: scale(calc(1 - (var(--tab) - var(--current)) * 0.03));
+  transform-origin: top center;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  z-index: var(--z-index);
+}
+
+.usps__item-wrapper {
+  font-size: 1.5em;
+  line-height: 1.2;
+  max-height: 100%;
+  max-width: 450px;
+  overflow: auto;
+  padding: 10px 0;
+  text-align: center;
+}
+
+// Boutons
+.btns-wrapper {
+  margin-top: 2rem;
+}
+
+
+
+.btns-wrapper, .hs-btns-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.usps__arrow {
+  background-color: $orange;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  height: 46px;
+  margin: 0;
+  padding: 0;
+  place-items: center;
+  width: 46px;
+  cursor: pointer;
+}
+
+.usps__arrow--prev {
+  transform: rotate(180deg);
+}
+
+.usps__item:nth-child(4n + 1) {
+  background-color: $orange;
+  color: #fff;
+}
+.usps__item:nth-child(4n + 2) {
+  background-color: $primary-color;
+  color: #fff;
+}
+.usps__item:nth-child(4n + 3) {
+  background-color: $green;
+  color: #fff;
+}
+.usps__item:nth-child(4n + 4) {
+  background-color: #ccdcf6;
+  color: black;
+}
+
+[data-current-stage="2"] .usps__item--1 {
+  transform: scale(0.8) translateY(50%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-current-stage="3"] .usps__item--1 {
+  transform: scale(0.8) translateY(50%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-current-stage="4"] .usps__item--1 {
+  transform: scale(0.8) translateY(50%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+// 2
+
+[data-current-stage="3"] .usps__item--2 {
+  transform: scale(0.8) translateY(50%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-current-stage="4"] .usps__item--2 {
+  transform: scale(0.8) translateY(50%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+//3
+
+[data-current-stage="4"] .usps__item--3 {
+  transform: scale(0.8) translateY(50%);
+  opacity: 0;
+  visibility: hidden;
+}

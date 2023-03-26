@@ -6,6 +6,20 @@
   justify-content: center;
   width: 100%;
   overflow: hidden;
+  background-color: $primary-color;
+  padding: 250px;
+  @media (max-width:1200px) {
+    padding:50px;
+  }
+  @media (max-width:992px) {
+    padding:20px;
+  }
+}
+
+.form-container h2 {
+  color: white;
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 
 .form-container-img1 {
@@ -16,8 +30,8 @@
 .form-container-img2 {
   position: absolute;
   top: 470px;
-  left:10px;
-  @media (max-width:576px) {
+  left: 10px;
+  @media (max-width: 576px) {
     display: none;
   }
 }
@@ -25,13 +39,12 @@
 .form-container-img3 {
   position: absolute;
   bottom: 50px;
-  right:10px;
+  right: 10px;
 }
 
 // Section login
 
-.connection-info {
-  background-color: $background-color;
+.connection-left {
   background-image: url("../img/connection2.png");
   background-position: bottom;
   background-repeat: no-repeat;
@@ -44,22 +57,32 @@
     display: none;
   }
 }
+.connection-left p {
+  margin-top: 100px;
+  font-size: 1.5em;
+}
+
+.connection-info {
+  color: white;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .connection-info p {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+.contact-button {
+  margin: auto;
 }
 
 // Le formulaire
 .login {
-  background-color: $yellow;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  width: 450px;
-  height: 500px;
-  padding: 30px;
-  position: absolute;
+  width: 100%;
   color: white;
   border-radius: 15px;
   @media (max-width: 992px) {
@@ -68,22 +91,28 @@
   }
 }
 
-.login p,.register p {
+.login p,
+.register p {
   font-size: 2em;
   font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .input-container {
   width: 100%;
   position: relative;
+  margin-bottom: 20px;
 }
+
+
 
 .big-input {
   border: none;
   height: 35px;
   width: 100%;
-  border: solid white 2px;
-  background-color: $yellow;
+  border: solid white 1px;
+  background-color: transparent;
   border-radius: 5px;
   color: white;
   outline: none;
@@ -91,6 +120,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1em;
 }
 
 .input-img {
@@ -124,7 +154,7 @@
 .input-container__checkbox {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  
 }
 
 .checkbox-label {
@@ -148,7 +178,7 @@
 
 .register {
   background-color: $yellow;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -156,102 +186,6 @@
   height: 500px;
   padding: 30px;
   border-radius: 15px;
-  position: absolute;
   color: white;
-}
-
-//animation form
-
-.active-l {
-  z-index: 2;
-  transform: perspective(100px) translate3d(0px, 0px, -0px);
-  animation-name: foregrounding-l;
-  animation-duration: 0.9s;
-  animation-fill-mode: forwards;
-}
-
-.active-r {
-  animation-name: foregrounding-r;
-  animation-duration: 0.9s;
-  animation-fill-mode: forwards;
-}
-
-.inactive-l {
-  animation-name: overshadowing-l;
-  animation-duration: 0.9s;
-  animation-fill-mode: forwards;
-}
-
-.inactive-r {
-  z-index: 0;
-  transform: perspective(200px) translate3d(100px, 65px, -50px);
-  animation-name: overshadowing-r;
-  animation-duration: 0.9s;
-  animation-fill-mode: forwards;
-}
-
-// ANIMATION
-
-@keyframes overshadowing-l {
-  0% {
-    z-index: 2;
-    transform: perspective(100px) translate3d(0px, 0px, 0px);
-    opacity: 1;
-    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
-  }
-  100% {
-    z-index: 1;
-    transform: perspective(100px) translate3d(100px, 0px, -30px);
-    opacity: 0.5;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
-  }
-}
-
-@keyframes overshadowing-r {
-  0% {
-    z-index: 2;
-    transform: perspective(100px) translate3d(0px, 0px, 0px);
-    opacity: 1;
-    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
-  }
-  100% {
-    z-index: 1;
-    transform: perspective(100px) translate3d(-100px, 0px, -30px);
-    opacity: 0.5;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
-  }
-}
-
-@keyframes foregrounding-l {
-  0% {
-    z-index: 1;
-    transform: perspective(100px) translate3d(100px, 0px, -30px);
-    opacity: 0.5;
-  }
-  50% {
-    z-index: 2;
-    transform: perspective(100px) translate3d(400px, 0px, -30px);
-  }
-  100% {
-    z-index: 2;
-    transform: perspective(100px) translate3d(0px, 0px, 0px);
-    opacity: 1;
-  }
-}
-
-@keyframes foregrounding-r {
-  0% {
-    z-index: 1;
-    transform: perspective(100px) translate3d(-100px, 0px, -30px);
-    opacity: 0.5;
-  }
-  50% {
-    z-index: 2;
-    transform: perspective(100px) translate3d(-400px, 0px, -30px);
-  }
-  100% {
-    z-index: 2;
-    transform: perspective(100px) translate3d(0px, 0px, 0px);
-    opacity: 1;
-  }
+  border: solid 5px $orange;
 }
