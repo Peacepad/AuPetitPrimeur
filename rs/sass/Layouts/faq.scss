@@ -1,0 +1,31 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 840px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 5px;
+}
+
+details {
+  font-size: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  & p {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+}
+

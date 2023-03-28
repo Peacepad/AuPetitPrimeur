@@ -4,6 +4,7 @@
     format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Sharp Grotesk";
@@ -11,6 +12,7 @@
     format("woff");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @import "./Utils/color.scss";
@@ -20,9 +22,10 @@
 @import "./Components/heading.scss";
 @import "./Layouts/header.scss";
 @import "./Layouts/form.scss";
-@import "./Layouts/footer.scss";
 @import "./Components/button.scss";
+@import "./Layouts/footer.scss";
 @import "./Pages/index.scss";
+@import "./Layouts/faq.scss";
 
 * {
   box-sizing: border-box;

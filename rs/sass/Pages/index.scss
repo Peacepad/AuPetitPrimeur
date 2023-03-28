@@ -25,12 +25,21 @@ main {
   }
 }
 
+.txt-appear {
+  font-size: 1.8em;
+  @media (max-width: 992px) {
+    font-size: 1.2em;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+  }
+}
+
 .txt-appear,
 .txt-appear2 {
-  font-size: 1.8em;
   opacity: 0;
   transform: translateY(100%) scale(2);
-  animation: txt-anim 0.6s 0.5s ease-out forwards;
+  animation: txt-anim 0.6s 1.5s ease-out forwards;
   @media (max-width: 992px) {
     font-size: 1.2em;
     margin: 40px 0px;
@@ -70,13 +79,21 @@ main {
   position: absolute;
   left: -1px;
   background-color: $green;
-  animation: slider-anim 1.2s 0.2s cubic-bezier(0.15, 0.32, 0.62, 0.99) forwards;
+  // animation: slider-anim 1.7s 0.2s cubic-bezier(0.15, 0.32, 0.62, 0.99) forwards;
   &__one {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
   }
   &__three {
     clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
   }
+}
+
+.carousel-slider__one,
+.carousel-slider__three {
+  animation: slider-anim 1.5s 1s cubic-bezier(0.15, 0.32, 0.62, 0.99) forwards;
+}
+.carousel-slider__two {
+  animation: slider-anim 1.7s 0.5s cubic-bezier(0.15, 0.32, 0.62, 0.99) forwards;
 }
 
 .carousel-img {
@@ -165,21 +182,6 @@ main {
   animation-delay: 6.66s;
 }
 
-// connection
-
-.connection {
-  background-color: $background-color;
-  padding-bottom: 0px;
-  min-height: 800px;
-  max-height: 1000px;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  color: black;
-  position: relative;
-  overflow: hidden;
-}
-
 // News
 
 .news {
@@ -197,47 +199,74 @@ main {
   font-size: 1.3rem;
 }
 
-.swiper-container,
-.swiper-container2 {
+.line-reveal {
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform-origin: left;
+  transition: 0.5s ease-out;
+  transform: scaleX(0);
+  margin-bottom: 50px;
+}
+.line-reveal-active {
+  transform: scaleX(1);
+}
+
+.swiper-container {
   overflow: visible;
   max-height: 350px;
   position: relative;
-  margin: 40px 0px;
+  margin: 50px 0px;
+  @media (max-width: 992px) {
+    margin: 20px 0px;
+    max-height: 200px;
+    min-height: 150px;
+  }
 }
 
-.swiper-wrapper {
-  height: auto;
-}
-
-.swiper-slide,
-.swiper-slide2 {
+.swiper-slide {
   transition: all 300ms ease-in-out;
   border-radius: 5px;
   position: relative;
+  max-height: 350px;
+  @media (max-width: 992px) {
+    max-height: 200px;
+    min-height: 150px;
+  }
 }
 
-.swiper-slide img,
-.swiper-slide2 img {
+.swiper-content {
+  height: 100%;
+  max-height: 350px;
+  @media (max-width: 992px) {
+    max-height: 200px;
+    min-height: 150px;
+  }
+}
+
+.swiper-slide img {
   border-radius: 5px;
   max-width: 100%;
   cursor: grab;
+  max-height: 350px;
+  @media (max-width: 992px) {
+    max-height: 200px;
+    min-height: 150px;
+  }
 }
 
-.swiper-slide img:active,
-.swiper-slide2 img:active {
+.swiper-slide img:active {
   cursor: grabbing;
 }
 
-.swiper-slide:hover,
-.swiper-slide2:hover {
-  transform: scale(1.2);
+.swiper-slide:hover {
+  transform: scale(1.1);
   transition: all 300ms ease-in-out;
   transition-delay: 200ms;
   z-index: 1;
 }
 
-.swiper-slide:hover img,
-.swiper-slide2:hover img {
+.swiper-slide:hover img {
   transition-delay: 300ms;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
@@ -257,16 +286,16 @@ main {
 }
 
 .usps__container {
-max-width: 100%;
-position: relative;
+  max-width: 100%;
+  position: relative;
 }
 
 .usps__item,
 .usps__list {
   height: var(--height-desktop);
-  @media (max-width: 992px){
+  @media (max-width: 992px) {
     height: var(--height-mobile);
-}
+  }
 }
 
 .usps__list {
@@ -300,9 +329,17 @@ position: relative;
   line-height: 1.2;
   max-height: 100%;
   max-width: 450px;
-  overflow: auto;
+  overflow: hidden;
   padding: 10px 0;
   text-align: center;
+}
+
+.usps__item-description {
+  margin-bottom: 10px;
+}
+
+.usps__item-map iframe {
+  border-radius: 20px;
 }
 
 // Boutons
@@ -310,9 +347,8 @@ position: relative;
   margin-top: 2rem;
 }
 
-
-
-.btns-wrapper, .hs-btns-wrapper {
+.btns-wrapper,
+.hs-btns-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -330,6 +366,9 @@ position: relative;
   place-items: center;
   width: 46px;
   cursor: pointer;
+  &:hover {
+    background-color: darken($orange, 5%);
+  }
 }
 
 .usps__arrow--prev {
@@ -345,12 +384,12 @@ position: relative;
   color: #fff;
 }
 .usps__item:nth-child(4n + 3) {
-  background-color: $green;
+  background-color: #4D934B;
   color: #fff;
 }
 .usps__item:nth-child(4n + 4) {
-  background-color: #ccdcf6;
-  color: black;
+  background-color: #000000;
+  color: white;
 }
 
 [data-current-stage="2"] .usps__item--1 {

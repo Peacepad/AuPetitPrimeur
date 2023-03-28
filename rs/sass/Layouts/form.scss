@@ -1,3 +1,21 @@
+// connection
+
+.connection {
+  background-color: $background-color;
+  padding-bottom: 0px;
+  min-height: 800px;
+  max-height: 1000px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  @media (max-width:992px) {
+    min-height: auto;
+  }
+}
+
 .form-container {
   position: relative;
   display: flex;
@@ -7,12 +25,9 @@
   width: 100%;
   overflow: hidden;
   background-color: $primary-color;
-  padding: 250px;
+  padding: 240px 240px 0px 240px;
   @media (max-width:1200px) {
-    padding:50px;
-  }
-  @media (max-width:992px) {
-    padding:20px;
+    padding: 50px 50px 0px 50px;
   }
 }
 
@@ -25,21 +40,21 @@
 .form-container-img1 {
   position: absolute;
   top: 20px;
+  @media (max-width:992px) {
+    top: 180px;
+    right: 20px;
+  }
 }
 
 .form-container-img2 {
   position: absolute;
-  top: 470px;
-  left: 10px;
-  @media (max-width: 576px) {
-    display: none;
-  }
-}
-
-.form-container-img3 {
-  position: absolute;
   bottom: 50px;
   right: 10px;
+  & img {
+  @media (max-width:992px) {
+    height: 150px;
+  }
+}
 }
 
 // Section login
@@ -76,6 +91,17 @@
 .contact-button {
   margin: auto;
 }
+// Form slider 
+
+.form-slider {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  @media (max-width:992px) {
+    height: 500px;
+  }
+}
 
 // Le formulaire
 .login {
@@ -84,7 +110,10 @@
   justify-content: space-between;
   width: 100%;
   color: white;
-  border-radius: 15px;
+  position: absolute;
+  left: 0;
+  top:0;
+  transition: 200ms ease-out;
   @media (max-width: 992px) {
     min-width: 0;
     max-width: 95%;
@@ -105,8 +134,6 @@
   margin-bottom: 20px;
 }
 
-
-
 .big-input {
   border: none;
   height: 35px;
@@ -121,6 +148,32 @@
   justify-content: center;
   align-items: center;
   font-size: 1em;
+}
+
+.big-textarea {
+  border: none;
+  height: 35px;
+  width: 100%;
+  border: solid white 1px;
+  background-color: transparent;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  resize: none;
+  padding-left: 20px;
+  padding-top: 5px;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  height: 120px;
+  &::placeholder {
+    color:white;
+  }
 }
 
 .input-img {
@@ -154,7 +207,7 @@
 .input-container__checkbox {
   display: flex;
   flex-direction: row-reverse;
-  
+  justify-content: flex-end;  
 }
 
 .checkbox-label {
@@ -167,25 +220,18 @@
   border: none;
 }
 
-// password forgot
 
-.input-container__forgot {
-  display: flex;
-  justify-content: end;
-}
 
 // register
 
 .register {
-  background-color: $yellow;
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 450px;
-  height: 500px;
-  padding: 30px;
-  border-radius: 15px;
+  width: 100%;
   color: white;
-  border: solid 5px $orange;
+  transition: 200ms ease-out;
 }
